@@ -8,7 +8,7 @@ const state = useGlobalState()
 
 <template>
   <main h-100dvh h-screen w-screen of-hidden bg-cover bg-center grid="~ rows-[max-content_1fr]"
-        :style="{ backgroundImage: `url(${getAssetsFile(`${state.bgImage}.jpg`)})` }">
+        :style="{ backgroundImage: `url(${getAssetsFile(`${state.bgImage}.png`)})` }">
     <GameNav/>
     <GameContent/>
   </main>
