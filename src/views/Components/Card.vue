@@ -1,26 +1,28 @@
 <script setup lang="ts">
-import { getAssetsFile} from "@/utils";
+import {getAssetsFile} from "@/utils";
+import type {CardType} from "@/views/Type";
 
-type CardType = {
-  number: 'A' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K'
-  color: 'heart' | 'spade' | 'club' | 'diamond'
-}
-
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   cardInfo: CardType
 }>(), {
   cardInfo: () => null
 })
+
+const colorMap = ['club', 'heart', 'spade', 'diamond']
+const numMap = ['K', 'Q', 'J', 'A', '10', '9', '8', '7', '6', '5', '4', '3', '2']
+const colorIdx = computed(() => colorMap.indexOf(props.cardInfo.color))
+const numIdx = computed(() => numMap.indexOf(props.cardInfo.number))
+
 </script>
 
 <template>
   <div
-      w-145px
-      h-221px
-      border-rd-8px
+      w-134px
+      h-201px
       :style="{
         backgroundImage: `url(${getAssetsFile('poker-all-card.png')})`,
-        backgroundPosition: '-1px -1px'
+        // backgroundPosition: '-16px -15px'
+        // backgroundPosition: `${-16 - 134 * colorIdx + 'px'} ${-15 - 201 * numIdx + 'px'}`
       }"
   ></div>
 </template>

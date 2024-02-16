@@ -23,9 +23,16 @@ type GameInfoType = {
     // 游戏日志(Todo: 数据结构待定)
     gameLogItems: any[];
 }
-
+/**
+ * 卡牌信息
+ */
+type CardType = {
+    number: 'K' | 'Q' | 'J' | 'A' | '10' | '9' | '8' | '7' | '6' | '5' | '4' | '3' | '2'
+    color: 'club' | 'heart' | 'spade' | 'diamond'  // 梅花、红心、黑桃、方片
+}
 export type {
     DifficultyType,
     GameStateType,
-    GameInfoType
+    GameInfoType,
+    CardType
 }
