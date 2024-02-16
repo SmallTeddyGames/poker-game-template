@@ -1,5 +1,5 @@
 const router = createRouter({
-    history: createWebHistory('/'),
+    history: createWebHistory('/poker-game-template/'),
     routes: [
         {
             path: '/',
