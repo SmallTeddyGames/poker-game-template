@@ -19,6 +19,7 @@ const numIdx = computed(() => numMap.indexOf(props.cardInfo.number))
   <div
       w-100px
       h-150px
+      border-rd-12px
       :style="{
         backgroundImage: `url(${getAssetsFile('poker-all-card.png')})`,
         backgroundPosition: `${-100 * numIdx + 'px'} ${-150 * colorIdx + 'px'}`
